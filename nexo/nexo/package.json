@@ -1,0 +1,16 @@
+{
+  "name": "nexo-chat",
+  "version": "1.1.0",
+  "description": "Nexo - chat em tempo real para devs e comunidade",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}

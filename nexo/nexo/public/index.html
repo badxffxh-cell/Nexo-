@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e1f22">
+  <meta name="description" content="Nexo - chat em tempo real para devs e comunidade.">
+  <title>Nexo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login" class="login">
+    <form id="loginForm" class="login-card" autocomplete="off">
+      <div class="logo">N</div>
+      <h1>Bem-vindo ao Nexo</h1>
+      <p>Chat para devs e comunidade. Escolha um apelido para entrar.</p>
+      <label for="nameInput">APELIDO</label>
+      <input id="nameInput" maxlength="24" autocomplete="off" autofocus required>
+      <div id="loginError" class="login-error" role="alert"></div>
+      <button type="submit" id="loginBtn">Entrar</button>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <div id="scrim" class="scrim"></div>
+    <nav id="servers" class="servers" aria-label="Servidores"></nav>
+
+    <aside class="channels">
+      <header id="serverName" class="side-head"></header>
+      <div id="channelList" class="channel-list"></div>
+      <footer class="me">
+        <div class="avatar-wrap"><div id="meAvatar" class="avatar"></div><span class="dot"></span></div>
+        <div class="me-info"><div id="meName" class="me-name"></div><div class="me-status">Online</div></div>
+      </footer>
+    </aside>
+
+    <main class="chat">
+      <div id="banner" class="banner hidden">Conexão perdida. Reconectando...</div>
+      <header class="chat-head">
+        <button id="menuBtn" class="icon-btn only-mobile" aria-label="Abrir canais">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <svg class="hash" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/></svg>
+        <strong id="chName"></strong>
+        <span id="chTopic" class="topic"></span>
+        <button id="membersBtn" class="icon-btn" aria-label="Mostrar membros" title="Membros">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 5a3.5 3.5 0 0 1 0 6.5M18 14.3c2 .7 3.5 2.5 3.5 5.7"/></svg>
+        </button>
+      </header>
+      <div id="messages" class="messages"></div>
+      <div id="typing" class="typing"></div>
+      <form id="composer" class="composer">
+        <textarea id="input" rows="1" maxlength="2000" aria-label="Mensagem"></textarea>
+        <button type="submit" class="send" aria-label="Enviar">
+          <svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-8.5 18-2-7.5z"/></svg>
+        </button>
+      </form>
+    </main>
+
+    <aside id="members" class="members">
+      <h3>Online — <span id="onlineCount">0</span></h3>
+      <div id="memberList"></div>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
